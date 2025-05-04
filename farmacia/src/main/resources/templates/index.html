@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Añadido para mejorar la visualización en dispositivos móviles -->
+    <title>Formulario CRUD</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<body>
+
+<!-- ENCABEZADO -->
+<header>
+    <h1>Formulario ingreso Medicamentos<i class="bi bi-heart-pulse"></i></h1>
+
+</header>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav>
+    <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/lista">Lista de Medicamentos</a></li>
+    </ul>
+</nav>
+
+<!-- FORMULARIO DE AGREGAR UN MEDICAMENTO -->
+<div class="form-container">
+    <form action="/agregar" method="POST">
+        
+        <!-- Selector de medicamento -->
+        <div class="form-group">
+            <label  class="center-text">Selecciona un medicamento:</label>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <label for="medicamento1">
+                        <input type="radio" id="medicamento1" name="medicamento" value="Acetaminofen" required>
+                        <img src="/imagenes/Acetaminofen.jpg" alt="Acetaminofen">
+                        <span>Acetaminofen</span>
+                        <span>1000$</span>
+                       
+                    </label>
+                    
+                    <label for="medicamento2">
+                        <input type="radio" id="medicamento2" name="medicamento" value="Pedialyte" required>
+                        <img src="/imagenes/pedialyte.jpg" alt="Pedialyte">
+                        <span>Pedialyte</span>
+                        <span>8000$</span>
+                    </label>
+                    <label for="medicamento3">
+                        <input type="radio" id="medicamento3" name="medicamento" value="ultraBengue" required>
+                        <img src="/imagenes/ultraBengue.jpg" alt="ultraBengue">
+                        <span>ultraBengue</span>
+                    </label>
+                    <label for="medicamento4">
+                        <input type="radio" id="medicamento4" name="medicamento" value="AdvilFem" required>
+                        <img src="/imagenes/AdvilFem.jpg" alt="AdvilFem">
+                        <span>Advil Fem</span>
+                    </label>
+                    <label for="medicamento5">
+                        <input type="radio" id="medicamento5" name="medicamento" value="AdvilMax" required>
+                        <img src="/imagenes/AdvilMax.jpg" alt="AdvilMax">
+                        <span>Advil Max</span>
+                    </label>
+                    <label for="medicamento6">
+                        <input type="radio" id="medicamento6" name="medicamento" value="NexCare" required>
+                        <img src="/imagenes/NexCare.jpg" alt="NexCare">
+                        <span>NexCare</span>
+                    </label>
+                    <label for="medicamento7">
+                        <input type="radio" id="medicamento7" name="medicamento" value="electrolit" required>
+                        <img src="/imagenes/electrolit.jpg" alt="electrolit">
+                        <span>Electrolit</span>
+                    </label>
+                    <label for="medicamento8">
+                        <input type="radio" id="medicamento8" name="medicamento" value="Mieltertos" required>
+                        <img src="/imagenes/Mieltertos.jpg" alt="Mieltertos">
+                        <span>Mieltertos</span>
+                    </label>
+                    <label for="medicamento9">
+                        <input type="radio" id="medicamento9" name="medicamento" value="Dulcolax" required>
+                        <img src="/imagenes/Dulcolax.jpg" alt="Dulcolax">
+                        <span>Dulcolax</span>
+                    </label>
+                    <label for="medicamento10">
+                        <input type="radio" id="medicamento10" name="medicamento" value="floratil" required>
+                        <img src="/imagenes/floratil.jpg" alt="floratil">
+                        <span>Floratil</span>
+                    </label>
+                </div> <!-- cierre de carousel-track -->
+            </div> <!-- cierre de carousel-container -->
+        </div> 
+
+        <!-- Campo cantidad -->
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required  placeholder="Cantidad" />
+        </div>
+
+
+        <button type="submit">
+            <i class="bi bi-heart-pulse"></i> Agregar
+        </button>
+    </form>
+</div> 
+
+<!-- Footer -->
+<footer>
+    <p>Instagram farmaVida  <i class="bi bi-instagram"></i></p>
+    <p>Telefono 3453256  <i class="bi bi-telephone-plus"></i></p>
+    <p>Ubicación Calle 36 # 14-25<i class="bi bi-geo-alt"></i></p>
+    <p>&copy; 2025 FarmaVida - Todos los derechos reservados</p>
+</footer>   
+
+</body>
+</html>

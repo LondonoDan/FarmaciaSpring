@@ -1,0 +1,344 @@
+/* Definición global de la página */
+html, body { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    background-size: cover;       /* Hace que la imagen cubra todo el viewport */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: fixed; /* Opcional: para efecto de fondo fijo */
+    height: 100vh;                /* Asegura que cubra al menos toda la altura de la ventana */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* centrando texto de la lista de medicamentos */
+.center-text {
+    text-align: center;
+}
+
+
+
+/* El main debe ocupar el espacio disponible */
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* Encabezado */
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    display: inline;
+    
+
+    
+}
+
+/* Menú de inicio */
+.compras{
+    margin: 0 auto;
+    display: block;
+
+}
+
+.comprar ul{
+    width: 25%;
+    background-color: #aeb6bf;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 250px; /* lo mueve a la derecha */
+    margin-top: 20px;  /* lo baja */
+    
+}
+.comprar a{
+    text-decoration: none; /* quita el subrayado */
+    color: #17202a;     /* cambia el color */   
+}
+
+.domicilio ul{
+    width: 25%;
+    background-color:#aeb6bf;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 730px;   /* lo mueve a la derecha */
+    margin-top: -150px;  /* lo baja */
+}
+
+.bienvenida a{
+    text-decoration: none; /* quita el subrayado */
+    color: #17202a;     /* cambia el color */
+}
+
+.bienvenida{
+    margin-left: 1020px; /* lo mueve a la derecha */
+}
+
+
+@keyframes mover {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+/* Menú de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+.form-group label {
+    font-weight: bold;
+    
+
+
+}
+
+.form-group input,
+.form-group select {
+    width: 30%; /* le da un ancho a los input donde se ingresa la cantidad y el valor*/
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Botones */
+button {
+    background-color: #145a32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+/* Carrusel de medicamentos */
+.carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 40%;    /* Organiza el carrusel de imagenes*/  
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    right: 500px; /* posiciona el carrusel hacia la derecha */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 16px;
+}
+
+.carousel-track label {
+    flex: 0 0 auto;
+    width: 140px;
+    scroll-snap-align: start;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.carousel-track label:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.carousel-track input[type="radio"] {
+    display: none;
+}
+
+.carousel-track input[type="radio"]:checked + img {
+    border: 3px solid #007bff;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: border 0.3s;
+}
+
+.carousel-track span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #17202a;
+    font-weight: bold;
+}
+
+/* Botones dentro de tarjetas */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Grid de tarjetas de medicamentos */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Tarjetas de medicamentos */
+.med-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.med-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.med-card h3 {
+    margin: 10px 0 5px;
+}
+
+.med-card p {
+    margin: 5px 0;
+}
+
+.med-card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para pagina editar */
+
+.carousel-selector {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 40%;    /* Organiza el carrusel de imagenes*/  
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    right: 500px; /* posiciona el carrusel hacia la derecha */
+}
+
+.track-carousel {
+    display: flex;
+    gap: 16px;
+}
+
+.track-carousel label {
+    flex: 0 0 auto;
+    width: 140px;
+    scroll-snap-align: start;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.track-carousel label:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.track-carousel input[type="radio"] {
+    display: none;
+}
+
+.track-carousel input[type="radio"]:checked + img {
+    border: 3px solid #007bff;
+}
+
+.track-carousel img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: border 0.3s;
+}
+
+.track-carousel span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar medicamento</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1 >Editar medicamento<i class="bi bi-heart-pulse"></i></h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/"><i class="bi bi-reply-all"></i>Inicio</a></li>
+        <li><a href="/lista"><i class="bi bi-reply-all"></i>Lista de medicamentos</a></li>
+    </ul>
+</nav>
+
+<div class="form-container">
+    <form th:action="@{/editar/{id}(id=${id})}" method="post">
+        
+        <!-- Selector de medicamento -->
+        <div class="form-group">
+            <label>Selecciona un medicamento:</label>
+            <div class="carousel-selector">
+                <!-- Repetir el patrón para cada medicamento -->
+                <div class="track-carousel">
+                    <label for="medicamento1">
+                        <input type="radio" id="medicamento1" name="medicamento" value="Acetaminofen"
+                               th:checked="${item.medicamento == 'Acetaminofen'}" />
+                        <img src="/imagenes/Acetaminofen.jpg" alt="Acetaminofen" />
+                        <span>Acetaminofen</span>
+                    </label>
+                    
+                <label for="medicamento2">
+                    <input type="radio" id="medicamento2" name="medicamento" value="Pedialyte"
+                           th:checked="${item.medicamento == 'Pedialyte'}" />
+                    <img src="/imagenes/pedialyte.jpg" alt="Pedialyte" />
+                    <span>Pedialyte</span>
+                </label>
+                <label for="medicamento3">
+                    <input type="radio" id="medicamento3" name="medicamento" value="ultraBengue"
+                           th:checked="${item.medicamento == 'ultraBengue'}" />
+                    <img src="/imagenes/ultraBengue.jpg" alt="ultraBengue" />
+                    <span>ultraBengue</span>
+                </label>
+                <label for="medicamento4">
+                    <input type="radio" id="medicamento4" name="medicamento" value="AdvilFem"
+                           th:checked="${item.medicamento == 'AdvilFem'}" />
+                    <img src="/imagenes/AdvilFem.jpg" alt="AdvilFem" />
+                    <span>Advil Fem</span>
+                </label>
+                <label for="medicamento5">
+                    <input type="radio" id="medicamento5" name="medicamento" value="AdvilMax"
+                           th:checked="${item.medicamento == 'AdvilMax'}" />
+                    <img src="/imagenes/AdvilMax.jpg" alt="AdvilMax" />
+                    <span>AdvilMax</span>
+                </label>
+                <label for="medicamento6">
+                    <input type="radio" id="medicamento6" name="medicamento" value="NexCare"
+                           th:checked="${item.medicamento == 'NexCare'}" />
+                    <img src="/imagenes/NexCare.jpg" alt="NexCare" />
+                    <span>NexCare</span>
+                </label>
+                <label for="medicamento7">
+                    <input type="radio" id="medicamento7" name="medicamento" value="electrolit"
+                           th:checked="${item.medicamento == 'electrolit'}" />
+                    <img src="/imagenes/electrolit.jpg" alt="electrolit" />
+                    <span>Electrolit</span>
+                </label>
+                <label for="medicamento8">
+                    <input type="radio" id="medicamento8" name="medicamento" value="Mieltertos"
+                           th:checked="${item.medicamento == 'Mieltertos'}" />
+                    <img src="/imagenes/Mieltertos.jpg" alt="Mieltertos" />
+                    <span>Mieltertos</span>
+                </label>
+                <label for="medicamento9">
+                    <input type="radio" id="medicamento9" name="medicamento" value="Dulcolax"
+                           th:checked="${item.medicamento == 'Dulcolax'}" />
+                    <img src="/imagenes/Dulcolax.jpg" alt="Dulcolax" />
+                    <span>Dulcolax</span>
+                </label>
+                <label for="medicamento10">
+                    <input type="radio" id="medicamento10" name="medicamento" value="floratil"
+                           th:checked="${item.medicamento == 'floratil'}" />
+                    <img src="/imagenes/floratil.jpg" alt="floratil" />
+                    <span>Floratil  </span>
+                </label>
+              
+            </div>
+        </div>
+    </div>
+
+        <!-- Campo cantidad -->
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad"
+                   th:value="${item.cantidad}" required />
+        </div>
+
+        <!-- Campo precio -->
+        <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01"
+                   th:value="${item.precio}" required />
+        </div>
+
+        <button type="submit">
+            <i class="bi bi-heart-pulse"></i>
+            Actualizar</button>
+    </form>
+</div>
+
+<footer>
+    <p>Instagram farmaVida  <i class="bi bi-instagram"></i></p>
+    <p>Telefono 3453256  <i class="bi bi-telephone-plus"></i></p>
+    <p>Ubicación Calle 36 # 14-25<i class="bi bi-geo-alt"></i></p>
+    <p>&copy; 2025 FarmaVida - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
